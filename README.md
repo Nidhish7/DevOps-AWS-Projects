@@ -6,6 +6,13 @@ Welcome to my **DevOps-AWS Projects** repository! This repo contains hands-on pr
 Each project is designed to reflect real-world scenarios and follows DevOps best practices. I continuously update this repository as I learn and build more.
 
 ---
+## 🙋‍♂️ About Me
+
+I’m **Nidhish Rajan**, a DevOps and Cloud Engineer passionate about automation, infrastructure, and cloud-native technologies. I created this repository as a public portfolio to learn, showcase, and grow.
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/nidhish-rajan-0b92601aa/) (Add your profile link)
+
+---
 ---
 
 ## 📁 Current Projects
@@ -48,14 +55,6 @@ Each project is designed to reflect real-world scenarios and follows DevOps best
 > 🔒 **Security First:** No credentials are stored in this repo. AWS access is handled via `aws configure` and IAM roles. `.gitignore` ensures sensitive files (e.g., `terraform.tfvars`) are excluded from commits. Always avoid hardcoding secrets or uploading them to public repositories. Use environment variables or secret managers in production.
 
 > ✅ All projects are built within the **AWS Free Tier**.
-
----
-
-## 🙋‍♂️ About Me
-
-I’m **Nidhish Rajan**, a DevOps and Cloud Engineer passionate about automation, infrastructure, and cloud-native technologies. I created this repository as a public portfolio to learn, showcase, and grow.
-
-- 🔗 [LinkedIn](https://www.linkedin.com/in/nidhish-rajan-0b92601aa/) (Add your profile link)
 
 ---
 
