@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Config - replace with your verified email
+FROM_EMAIL="your-verified-email@example.com"
+TO_EMAIL="your-verified-email@example.com"
+SUBJECT="System Health Alert on $(hostname) at $(date '+%Y-%m-%d %H:%M:%S')"
+
+# Get system metrics
+CPU_LOAD=$(uptime | awk -F 'load average:' '{ print $2 }' | cut -d, -f1 | xargs)
+MEM_USED=$(free -m | awk '/Mem:/ { printf("%dMB / %dMB (%.2f%%)", $3, $2, $3/$2*100) }')
+DISK_USED=$(df -h / | awk 'NR==2 {print $3 " used / " $2 " total (" $5 " used)"}')
+
+# Compose email body
+BODY="System Health Report for $(hostname)
+
+CPU Load Average (1 min): $CPU_LOAD
+Memory Usage: $MEM_USED
+Disk Usage (root partition): $DISK_USED
+
+-- End of report --"
+
+# Send email using AWS CLI SES
+aws ses send-email \
+    --from "$FROM_EMAIL" \
+    --destination "ToAddresses=$TO_EMAIL" \
+    --message "Subject={Data=$SUBJECT,Charset=utf-8},Body={Text={Data=\"$BODY\",Charset=utf-8}}"
